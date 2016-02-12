@@ -178,7 +178,7 @@ public:
 	float				_liveFrame;
 
 	//エフェクト用パラメータ
-	SsEffectRenderer*	refEffect;
+	std::unique_ptr<SsEffectRenderer>	refEffect;
 	SsPartState			partState;
 
 public:

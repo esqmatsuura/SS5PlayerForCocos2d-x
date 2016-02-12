@@ -1846,8 +1846,7 @@ void Player::setPartsParentage()
 		//エフェクトパーツの生成
 		if (sprite->refEffect)
 		{
-			delete sprite->refEffect;
-			sprite->refEffect = 0;
+			sprite->refEffect = nullptr;
 		}
 
 		std::string refeffectName = static_cast<const char*>(ptr(partData->effectfilename));
@@ -1858,8 +1857,7 @@ void Player::setPartsParentage()
 			{
 
 				//エフェクトクラスにパラメータを設定する
-				SsEffectRenderer* er = new SsEffectRenderer();
-				sprite->refEffect = er;
+				sprite->refEffect = std::make_unique<SsEffectRenderer>();
 				sprite->refEffect->setParentAnimeState(&sprite->partState);
 				sprite->refEffect->setEffectData(effectmodel);
 				sprite->refEffect->setSS5Maneger(_ss5man);
@@ -3302,7 +3300,6 @@ CustomSprite::CustomSprite()
 	, _colorBlendFuncNo(0)
 	, _liveFrame(0.0f)
 	, _hasPremultipliedAlpha(0)
-	, refEffect(0)
 	, _ssplayer(0)
 {}
 
