@@ -389,15 +389,15 @@ public:
 // アニメーション初期化時にバッファ確保の時間が長くなります。
 // 再生するアニメーションにエフェクトパーツがない場合は初期化が行われなわれないので負荷は発生しません。
 //SpriteStudio本体の設定
-#define SSEFFECTRENDER_EMMITER_MAX (1024)
-#define SSEFFECTRENDER_PARTICLE_MAX (4096)
+#define SSEFFECTRENDER_EMMITER_MAX (8)
+#define SSEFFECTRENDER_PARTICLE_MAX (128)
 //初期化が重い場合は定数を減らしてみてください。
 //バッファ不足によりエフェクトが再現できない場合があります。
 //#define SSEFFECTRENDER_EMMITER_MAX (128)		//エミッターバッファ数
 //#define SSEFFECTRENDER_PARTICLE_MAX (512)	//パーティクルバッファ数
 //-------------------------------------------------------------
 
-#define SSEFFECTRENDER_BACTH_MAX (256)		//ノード階層最大値（固定）
+#define SSEFFECTRENDER_BACTH_MAX (128)		//ノード階層最大値（固定）
 
 //--------------------------------------------------------------------------
 //エフェクトの描画処理メイン
